@@ -2,22 +2,29 @@ package com.example.cookrecipe.Fragment;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.cookrecipe.R;
 import com.example.cookrecipe.code.Notice;
 import com.example.cookrecipe.code.NoticeListAdapter;
 import com.example.cookrecipe.code.SessionManager;
+import com.example.cookrecipe.main.MainActivity;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -25,9 +32,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
@@ -38,9 +46,9 @@ public class HomeFragment extends Fragment {
     private ImageButton mBtn1, mBtn2, mBtn3, mBtn4, mBtn5, mBtn6 ;
     private FragmentManager mFragmentManager;
     private SessionManager sessionManager;
-    private String loggedInUsername;
-    private TextView dbtest;
-
+    private String userId;
+    private String recipeId;
+    private RequestQueue requestQueue;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,7 +60,6 @@ public class HomeFragment extends Fragment {
         adapter = new NoticeListAdapter(getActivity(), noticeList);
         noticeListView.setAdapter(adapter);
         return view;
-
     }
 
     @Override
@@ -68,71 +75,35 @@ public class HomeFragment extends Fragment {
 
         sessionManager = new SessionManager(getActivity().getApplicationContext());
 
-        if (sessionManager.isLoggedIn()) {
-            loggedInUsername = sessionManager.getUsername();
-        } else {
-            // Handle the case when the user is not logged in
-            // Redirect to the login activity or show an error message
-        }
+        requestQueue = Volley.newRequestQueue(getActivity());
 
-        mBtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment = new ApplicableFragment();
-                mFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit();
-            }
-        });
+        userId = sessionManager.getUsername();
 
-        mBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment = new ApplicableFragment();
-                mFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit();
-            }
-        });
-        mBtn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment = new ApplicableFragment();
-                mFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit();
-            }
-        });
-        mBtn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment = new ApplicableFragment();
-                mFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit();
-            }
-        });
-        mBtn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment = new ApplicableFragment();
-                mFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit();
-            }
-        });
-        mBtn6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragment = new ApplicableFragment();
-                mFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, fragment)
-                        .commit();
-            }
-        });
+        mBtn1.setOnClickListener(onImageClickListener);
+        mBtn2.setOnClickListener(onImageClickListener);
+        mBtn3.setOnClickListener(onImageClickListener);
+        mBtn4.setOnClickListener(onImageClickListener);
+        mBtn5.setOnClickListener(onImageClickListener);
+        mBtn6.setOnClickListener(onImageClickListener);
 
         new BackgroundTask().execute();
     }
+
+    private final View.OnClickListener onImageClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String recipeId = v.getTag().toString();
+            Log.d("HomeFragment", "selected recipeId: " + recipeId);
+
+//            ApplicableFragment applicableFragment = ApplicableFragment.newInstance(recipeId);
+//
+//            getParentFragmentManager().beginTransaction()
+//                    .replace(R.id.fragment_container, applicableFragment) // 프래그먼트 컨테이너 아이디에 맞춰 변경
+//                    .addToBackStack(null)
+//                    .commit();
+
+        }
+    };
 
     class BackgroundTask extends AsyncTask<Void, Void, String> {
 

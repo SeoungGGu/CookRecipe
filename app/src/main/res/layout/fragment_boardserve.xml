@@ -4,86 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.BoardserveFragmant">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="60dp"
-        android:text="통닭"
-        android:textSize="30dp" />
-
-    <ImageButton
-        android:id="@+id/button10"
-        android:layout_width="150dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="60dp"
-        android:adjustViewBounds="true"
-        android:background="@drawable/ic_chicken"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/button11"
-        android:layout_width="150dp"
-        android:layout_height="130dp"
-        android:background="@drawable/ic_sushi"
-        android:layout_marginTop="190dp"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="190dp"
-        android:text="스시"
-        android:textSize="30dp" />
-
-    <ImageButton
-        android:id="@+id/button12"
-        android:layout_width="150dp"
-        android:layout_height="130dp"
-        android:background="@drawable/ic_sushi"
-        android:layout_marginTop="320dp"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:text="Button" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="320dp"
-        android:text="페퍼로니 피자"
-        android:textSize="30dp"/>
-
-    <ImageButton
-        android:id="@+id/button13"
-        android:layout_width="150dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="450dp"
-        android:background="@drawable/ic_sushi"
-        tools:ignore="SpeakableTextPresentCheck"
-        />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="450dp"
-        android:text="옛날떡볶이"
-        android:textSize="30dp"/>
-
-    <ImageButton
-        android:id="@+id/button16"
-        android:layout_width="65dp"
-        android:layout_height="61dp"
-        android:background="@drawable/ic_search"
-        android:layout_marginLeft="340dp"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-
-
-
+        android:text="boardserveFragment"
+        android:layout_gravity="center"
+        android:textSize="50dp"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recipeListView"
+        android:layout_marginTop="56dp"
+        android:dividerHeight="10dp"
+        android:divider="#ffffff"/>
+</LinearLayout>
 </FrameLayout>

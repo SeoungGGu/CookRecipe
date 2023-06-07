@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.example.cookrecipe.Fragment.BoardserveFragmant;
 import com.example.cookrecipe.Fragment.MyNoticeFragment;
 import com.example.cookrecipe.code.BackPressHandler;
 import com.example.cookrecipe.Fragment.BottomMyiceFragment;
@@ -101,6 +102,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         toggle.syncState();
+    }
+
+    public BoardserveFragmant getBoardserveFragment() {
+        Fragment fragment = getSupportFragmentManager().findFragmentByTag("boardserve");
+        if (fragment instanceof BoardserveFragmant) {
+            return (BoardserveFragmant) fragment;
+        }
+        return null;
     }
 
 }
