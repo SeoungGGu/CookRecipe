@@ -10,7 +10,7 @@ import com.example.cookrecipe.fragment.MyNoticeFragment;
 import com.example.cookrecipe.code.BackPressHandler;
 import com.example.cookrecipe.fragment.BottomMyiceFragment;
 import com.example.cookrecipe.Fragment.NoticeFragment;
-import com.example.cookrecipe.fragment.HomeFragment;
+import com.example.cookrecipe.Fragment.HomeFragment;
 import com.example.cookrecipe.code.LoginSignupHandler;
 import com.example.cookrecipe.code.NavBar;
 import com.example.cookrecipe.code.NavigationItemSelectedListener;
