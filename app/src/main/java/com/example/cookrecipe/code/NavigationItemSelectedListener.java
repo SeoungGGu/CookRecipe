@@ -8,9 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.cookrecipe.Fragment.AramFragment;
-import com.example.cookrecipe.Fragment.OptionFragment;
-import com.example.cookrecipe.Fragment.ScrapRecipeFragment;
+import com.example.cookrecipe.fragment.AramFragment;
+import com.example.cookrecipe.fragment.OptionFragment;
+import com.example.cookrecipe.fragment.ScrapRecipeFragment;
 import com.example.cookrecipe.R;
 import com.google.android.material.navigation.NavigationView;
 

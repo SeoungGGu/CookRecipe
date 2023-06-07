@@ -6,11 +6,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
-import com.example.cookrecipe.Fragment.MyNoticeFragment;
+import com.example.cookrecipe.fragment.MyNoticeFragment;
 import com.example.cookrecipe.code.BackPressHandler;
-import com.example.cookrecipe.Fragment.BottomMyiceFragment;
+import com.example.cookrecipe.fragment.BottomMyiceFragment;
 import com.example.cookrecipe.Fragment.NoticeFragment;
-import com.example.cookrecipe.Fragment.HomeFragment;
+import com.example.cookrecipe.fragment.HomeFragment;
 import com.example.cookrecipe.code.LoginSignupHandler;
 import com.example.cookrecipe.code.NavBar;
 import com.example.cookrecipe.code.NavigationItemSelectedListener;

@@ -1,4 +1,4 @@
-package com.example.cookrecipe.Fragment;
+package com.example.cookrecipe.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

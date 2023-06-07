@@ -26,12 +26,16 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding true
+        dataBinding = true
+    }
 }
 
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.material:material:1.10.0-alpha01'
     implementation 'com.github.VishnuSivadasVS:Advanced-HttpURLConnection:1.2'
@@ -44,4 +48,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
 
     implementation 'com.android.volley:volley:1.2.1'
+
+    implementation 'com.hannesdorfmann:adapterdelegates4:4.3.2'
+    implementation 'com.github.luizgrp:SectionedRecyclerViewAdapter:v3.2.0'
+    implementation "org.greenrobot:eventbus:3.3.1"
+    implementation 'com.github.OzcanAlasalvar:DatePicker:1.0.4'
 }
