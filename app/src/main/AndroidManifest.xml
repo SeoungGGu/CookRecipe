@@ -36,8 +36,6 @@
             android:name=".main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
-
     </application>
 
 </manifest>
