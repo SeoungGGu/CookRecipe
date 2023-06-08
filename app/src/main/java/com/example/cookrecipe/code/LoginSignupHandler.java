@@ -6,7 +6,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.cookrecipe.Fragment.MyNoticeFragment;
+import com.example.cookrecipe.fragment.MyNoticeFragment;
 import com.example.cookrecipe.R;
 
 public class LoginSignupHandler {

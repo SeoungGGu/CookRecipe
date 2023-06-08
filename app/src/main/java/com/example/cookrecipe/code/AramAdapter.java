@@ -10,12 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.cookrecipe.R;
 
 import java.util.ArrayList;
 
-public class AramAdapter extends RecyclerView.Adapter<AramAdapter.CustomViewHolder> {
+public abstract class AramAdapter extends RecyclerView.Adapter<AramAdapter.CustomViewHolder> {
 
     private ArrayList<AramDTO> arrayList;
     private Context context;
@@ -34,15 +33,15 @@ public class AramAdapter extends RecyclerView.Adapter<AramAdapter.CustomViewHold
         return holder;
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
-        Glide.with(holder.itemView)
-                .load(arrayList.get(position).getProfile())
-                .into(holder.iv_profile);
-        holder.tv_id.setText(arrayList.get(position).getId());
-        holder.tv_pw.setText(String.valueOf(arrayList.get(position).getPw()));
-        holder.tv_userName.setText(arrayList.get(position).getUserName());
-    }
+//    @Override
+//    public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
+//        Glide.with(holder.itemView)
+//                .load(arrayList.get(position).getProfile())
+//                .into(holder.iv_profile);
+//        holder.tv_id.setText(arrayList.get(position).getId());
+//        holder.tv_pw.setText(String.valueOf(arrayList.get(position).getPw()));
+//        holder.tv_userName.setText(arrayList.get(position).getUserName());
+//    }
 
     @Override
     public int getItemCount() {
